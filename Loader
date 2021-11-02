@@ -2,141 +2,7 @@ for o,l in pairs({(function(l,...)_f963498aaa0269d0="This file was obfuscated us
 
 
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mrgunz/S/main/Loader"))();
-local Ver = "v2.0"
-local LoaderName = "Unnamed Cheat Loader"
-local CheatName = "UnnamedCheat"
-COREGUI = game.CoreGui
-for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
-	if v.Name == LoaderName then
-		v:Destroy()
-	end
-end
-for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
-	if v.Name == CheatName then
-		v:Destroy()
-	end
-end
-Mrgunz_True = true
-Mrgunz_False = false
-local UnnamedCheatLoader = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local Unnamed = Instance.new("TextLabel")
-local Cheat = Instance.new("TextLabel")
-local TEXT = Instance.new("TextLabel")
-local Load = Instance.new("TextLabel")
-local ui = Instance.new("UICorner")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mrgunz/S/main/List"))();
-function UC_Loader()
-	local length = math.random(30,100)
-	local array = {}
-	for i = 1, length do
-		array[i] = string.char(math.random(30, 100))
-	end
-	return table.concat(array)
-end
-UnnamedCheatLoader.Name = LoaderName
-UnnamedCheatLoader.Parent = COREGUI
-UnnamedCheatLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-UnnamedCheatLoader.Enabled = true
 
-MainFrame.Name = UC_Loader()
-MainFrame.Parent = UnnamedCheatLoader
-MainFrame.Active = true
-MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(23323232,1)
-MainFrame.Size = UDim2.new(0, 354, 0, 100)
-MainFrame.ZIndex = 999999999
-MainFrame.Visible = true
-
-Unnamed.Name = UC_Loader()
-Unnamed.Parent = MainFrame
-Unnamed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Unnamed.BackgroundTransparency = 1.000
-Unnamed.BorderSizePixel = 0
-Unnamed.Position = UDim2.new(0.0395480208, 0, 0.25, 0)
-Unnamed.Size = UDim2.new(0, 200, 0, 50)
-Unnamed.ZIndex = 1000000000
-Unnamed.Font = Enum.Font.SourceSans
-Unnamed.Text = "Unnamed"
-Unnamed.TextColor3 = Color3.fromRGB(0, 0, 0)
-Unnamed.TextSize = 48.000
-Unnamed.TextStrokeTransparency = 0.000
-Unnamed.Visible = true
-
-Cheat.Name = UC_Loader()
-Cheat.Parent = MainFrame
-Cheat.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Cheat.BackgroundTransparency = 1.000
-Cheat.BorderSizePixel = 0
-Cheat.Position = UDim2.new(0.491525412, 0, 0.25, 0)
-Cheat.Size = UDim2.new(0, 138, 0, 50)
-Cheat.ZIndex = 1000000000
-Cheat.Font = Enum.Font.SourceSans
-Cheat.Text = "Cheat"
-Cheat.TextColor3 = Color3.fromRGB(255, 255, 255)
-Cheat.TextSize = 48.000
-Cheat.TextStrokeTransparency = 0.000
-Cheat.Visible = true
-
-TEXT.Name = UC_Loader()
-TEXT.Parent = MainFrame
-TEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TEXT.BackgroundTransparency = 1.000
-TEXT.BorderSizePixel = 0
-TEXT.Position = UDim2.new(0.796610177, 0, 0.570000052, 0)
-TEXT.Size = UDim2.new(0, 72, 0, 18)
-TEXT.ZIndex = 1000000000
-TEXT.Font = Enum.Font.SourceSans
-TEXT.Text = Ver
-TEXT.TextColor3 = Color3.fromRGB(255, 255, 255)
-TEXT.TextSize = 22.000
-TEXT.TextStrokeTransparency = 0.000
-TEXT.Visible = false
-
-Load.Name = UC_Loader()
-Load.Parent = MainFrame
-Load.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Load.BackgroundTransparency = 1.000
-Load.BorderSizePixel = 0
-Load.Position = UDim2.new(0.242937848, 0, 0.75, 0)
-Load.Size = UDim2.new(0, 182, 0, 18)
-Load.ZIndex = 1000000000
-Load.Font = Enum.Font.SourceSans
-Load.Text = "Loading"
-Load.TextColor3 = Color3.fromRGB(255, 255, 255)
-Load.TextSize = 22.000
-Load.TextStrokeTransparency = 0.000
-Load.Visible = true
-
-ui.CornerRadius = UDim.new(-11, 999999999)
-ui.Name = UC_Loader()
-ui.Parent = MainFrame
-
-MainFrame:TweenPosition(UDim2.new(0.360189557, 0, 0.0103413165, 0), "InOut", "Quart", 1.2, true, nil)
-wait(math.random(0.1, 1.6))
-Load.Text = "Loading."
-wait(math.random(0.1, 1.6))
-Load.Text = "Loading.."
-wait(math.random(0.1, 1.6))
-Load.Text = "Loading..."
-wait(math.random(0.1, 0.9))
-Load.Text = "Loading."
-wait(math.random(0.1, 1))
-Load.Text = "Loading.."
-wait(math.random(0.1, 0.9))
-Load.Text = "Loading..."
-wait(math.random(0.1, 1.6))
-Load.Text = "Loading."
-wait(math.random(0.1, 1.6))
-Load.Text = "Loading.."
-wait(math.random(0.1, 0.9))
-Load.Text = "Unnamed Cheat Loaded"
-wait(2.5)
-MainFrame:TweenPosition(UDim2.new(23323232,1), "InOut", "Quart", 1.2, true, nil)
-wait(2)
-UnnamedCheatLoader.Enabled = false
 local UnnamedCheat = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UnnamedCheat_UICorner = Instance.new("UICorner")
@@ -549,7 +415,7 @@ LoadCheat_Btn.MouseButton1Down:connect(function()
 				v:Destroy()
 			end
 		end
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/mrgunz/S/main/Typical_Colors_2"))();
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/mrgunz/S/main/TC2"))();
 	end
 	if game.PlaceId==3311740703 then
 		LoadCheat_Btn.Text = "Loading"
@@ -709,7 +575,7 @@ if game.PlaceId==2218671952 then
 end
 if game.PlaceId==7029243758 then
 	Main_Image_Label.Text = "Pirates vs. Ninjas"
-	Main_Image.Image = "http://www.roblox.com/asset/?id=7865436195"
+	Main_Image.Image = "http://www.roblox.com/asset/?id=7865436169"
 	CheatStatus_Text.Text = ""
 	_1_LoadCheatUI.Visible = true
 	GameID.Text = "Game ID: 7029243758"
