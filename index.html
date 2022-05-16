@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+		<meta name = "author" content = "Unnamed Cheat" />
+		<meta name = "description" content = "Unnamed Cheat" />
+		<meta property = "og:title" content = "Unnamed Cheat" />
+		<meta property = "og:description" content = "Official website for Unnamed Cheat" />
+		<meta property = "og:type" content = "website" />
+        <style>
+            body {
+				background-color: rgb(40, 40, 40);
+                color: white;
+                font-family: "Trebuchet MS";
+				background-attachment: fixed;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+      
+            body::-webkit-scrollbar-thumb {
+                background-color: rgb(80, 80, 80);
+            }
+
+            #scriptBtn {
+                color: rgb(78, 153, 204); 
+                background-color: rgb(60, 60, 60);
+                margin-top: 45px;
+                border: 0px;
+                border-radius: 10px;
+                cursor: pointer;
+                width: 650px;
+                height: 35px;
+            }
+
+            #copyPopup {
+                color: rgb(255, 255, 255); 
+                background-color: rgb(50, 50, 50); 
+                border: 0px;
+                border-radius: 0px;
+                text-align: center;
+                position: absolute;
+                display: none;
+                width: 150px;
+                height: 35px;
+            }
+
+            #gamesBtn {
+                background-color: rgb(50, 50, 50); 
+                color: rgb(255, 255, 255); 
+                font-size: large; 
+                border: 0px; 
+                border-radius: 3px;
+                cursor: pointer; 
+                width: 210px; 
+                height: 50px;
+            }
+
+            #discordBtn {
+                background-color: rgb(50, 50, 50);  
+                color: rgb(255, 255, 255); 
+                font-size: large; 
+                border: 0px; 
+                border-radius: 3px;
+                cursor: pointer; 
+                width: 210px; 
+                height: 50px;
+            }
+
+            #copyBtn:hover {
+                background-color: rgb(70, 70, 70);
+            }
+            #detailLine {
+                margin-top: 45px;
+                border: 1px solid rgb(40, 40, 40);
+                width: 500px;
+                height: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" value="Copied To Clipboard!" readonly id="copyPopup">
+        <center>
+            <h1 style="font-family: monospace;"></h1>
+            <button id="scriptBtn"><span style="color: rgb(78, 153, 204);">loadstring</span>(game:<span style="color: rgb(78, 153, 204);">HttpGet</span>(<span style="color: rgb(80, 179, 179);">"</span><span style="color: rgb(149, 199, 144);">https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Loader</span><span style="color: rgb(78, 153, 204);">"</span>))();</button>
+            <h1 style="font-family: monospace;"><span style="color: rgb(0, 0, 0);">Unnamed </span>Cheat</span> Supported Exploits</h1>
+            <i style="color: rgb(180, 180, 180);"><a href="https://x.synapse.to/" target = "_blank" style="color: rgb(180, 180, 180);">Synapse X</a></i>
+            <br>
+            <div id="detailLine"></div>
+            <button id="gamesBtn">View Supported Games</button>
+            <br>
+            <div id="detailLine"></div>
+            <button id="discordBtn">Join Discord Server</button>
+        </center>
+        <script type="text/javascript">
+            const scriptBtn = document.getElementById("scriptBtn");
+            const copyPopup = document.getElementById("copyPopup");
+            const gamesBtn = document.getElementById("gamesBtn");
+            const discordBtn = document.getElementById("discordBtn");
+
+            scriptBtn.addEventListener("click", () => {
+                const scriptBox = document.createElement("textarea");
+                scriptBox.value = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Loader"))();';
+                document.body.appendChild(scriptBox);
+                scriptBox.select();
+                document.execCommand("Copy");
+                document.body.removeChild(scriptBox);
+                copyPopup.style.display = "block";
+                setTimeout(() => {copyPopup.style.display = "none";}, 2800);
+            });
+
+            gamesBtn.addEventListener("click", () => {
+                window.open("https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Game_List");
+            });
+
+            discordBtn.addEventListener("click", () => {
+                window.open("http://discord.gg/9n868vFG2N");
+            });
+        </script>
+    </body>
+</html>
