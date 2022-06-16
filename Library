@@ -354,8 +354,8 @@ function UnnamedCheat_Library:Window()
 		function Exit(callback)
 			local MiniSettings = Instance.new("Frame")
 			local MiniSettingsUIListLayout = Instance.new("UIListLayout")
-			local HideMenuButton = Instance.new("TextButton")
 			local DeleteMenuButton = Instance.new("TextButton")
+			local HideMenuButton = Instance.new("TextButton")
 			
 			MiniSettings.Name = getgenv().UnnamedCheat_RandomText --> Mini Settings"
 			MiniSettings.Parent = Screen
@@ -373,23 +373,6 @@ function UnnamedCheat_Library:Window()
 			MiniSettingsUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 			MiniSettingsUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 			
-			syn.protect_gui(HideMenuButton)
-			HideMenuButton.Name = getgenv().UnnamedCheat_RandomText --> Hide Menu Button"
-			HideMenuButton.Parent = MiniSettings
-			HideMenuButton.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-			HideMenuButton.BackgroundTransparency = 1.000
-			HideMenuButton.BorderSizePixel = 0
-			HideMenuButton.Position = UDim2.new(0.800000012, 0, 0, 0)
-			HideMenuButton.Size = UDim2.new(0, 19, 0, 22)
-			HideMenuButton.AutoButtonColor = false
-			HideMenuButton.Font = Enum.Font.Gotham
-			HideMenuButton.Text = "_"
-			HideMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-			HideMenuButton.TextSize = 12.000
-			HideMenuButton.MouseButton1Down:connect(function()
-				UnnamedCheat_Gui.Enabled = false
-			end)
-			
 			syn.protect_gui(DeleteMenuButton)
 			DeleteMenuButton.Name = getgenv().UnnamedCheat_RandomText --> Delete Menu Button"
 			DeleteMenuButton.Parent = MiniSettings
@@ -405,6 +388,23 @@ function UnnamedCheat_Library:Window()
 			DeleteMenuButton.TextSize = 12.000
 			DeleteMenuButton.MouseButton1Down:connect(function()
 				pcall(callback)
+			end)
+			
+			syn.protect_gui(HideMenuButton)
+			HideMenuButton.Name = getgenv().UnnamedCheat_RandomText --> Hide Menu Button"
+			HideMenuButton.Parent = MiniSettings
+			HideMenuButton.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+			HideMenuButton.BackgroundTransparency = 1.000
+			HideMenuButton.BorderSizePixel = 0
+			HideMenuButton.Position = UDim2.new(0.800000012, 0, 0, 0)
+			HideMenuButton.Size = UDim2.new(0, 19, 0, 22)
+			HideMenuButton.AutoButtonColor = false
+			HideMenuButton.Font = Enum.Font.Gotham
+			HideMenuButton.Text = "_"
+			HideMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			HideMenuButton.TextSize = 12.000
+			HideMenuButton.MouseButton1Down:connect(function()
+				UnnamedCheat_Gui.Enabled = false
 			end)
 		end
 		
