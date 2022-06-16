@@ -1,3 +1,4 @@
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/"..getgenv().UnnamedCheat_Loadstring.."/UnnamedCheat/main/List"))();
 pcall(function()
 	if getgenv().UnnamedCheat_GameName == nil then
@@ -353,7 +354,6 @@ function UnnamedCheat_Library:Window()
 		
 		function Exit(callback)
 			local MiniSettings = Instance.new("Frame")
-			local MiniSettingsUIListLayout = Instance.new("UIListLayout")
 			local DeleteMenuButton = Instance.new("TextButton")
 			local HideMenuButton = Instance.new("TextButton")
 			
@@ -366,20 +366,13 @@ function UnnamedCheat_Library:Window()
 			MiniSettings.Position = UDim2.new(0.793650746, 0, 0, 0)
 			MiniSettings.Size = UDim2.new(0, 130, 0, 22)
 			
-			MiniSettingsUIListLayout.Name = getgenv().UnnamedCheat_RandomText --> Mini Settings UI List Layout"
-			MiniSettingsUIListLayout.Parent = MiniSettings
-			MiniSettingsUIListLayout.FillDirection = Enum.FillDirection.Horizontal
-			MiniSettingsUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
-			MiniSettingsUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			MiniSettingsUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-			
 			syn.protect_gui(DeleteMenuButton)
 			DeleteMenuButton.Name = getgenv().UnnamedCheat_RandomText --> Delete Menu Button"
 			DeleteMenuButton.Parent = MiniSettings
 			DeleteMenuButton.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 			DeleteMenuButton.BackgroundTransparency = 1.000
 			DeleteMenuButton.BorderSizePixel = 0
-			DeleteMenuButton.Position = UDim2.new(0.800000012, 0, 0, 0)
+			DeleteMenuButton.Position = UDim2.new(0.853846192, 0, 0, 0)
 			DeleteMenuButton.Size = UDim2.new(0, 19, 0, 22)
 			DeleteMenuButton.AutoButtonColor = false
 			DeleteMenuButton.Font = Enum.Font.Gotham
@@ -396,7 +389,7 @@ function UnnamedCheat_Library:Window()
 			HideMenuButton.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 			HideMenuButton.BackgroundTransparency = 1.000
 			HideMenuButton.BorderSizePixel = 0
-			HideMenuButton.Position = UDim2.new(0.800000012, 0, 0, 0)
+			HideMenuButton.Position = UDim2.new(0.684615374, 0, 0, 0)
 			HideMenuButton.Size = UDim2.new(0, 19, 0, 22)
 			HideMenuButton.AutoButtonColor = false
 			HideMenuButton.Font = Enum.Font.Gotham
