@@ -1,3 +1,5 @@
+
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/"..getgenv().UnnamedCheat_Loadstring.."/UnnamedCheat/main/List"))();
 pcall(function()
 	if getgenv().UnnamedCheat_GameName == nil then
@@ -378,6 +380,7 @@ function UnnamedCheat_Library:Window()
 			DeleteMenuButton.Text = "_"
 			DeleteMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 			DeleteMenuButton.TextSize = 12.000
+			DeleteMenuButton.Visible = false
 			DeleteMenuButton.MouseButton1Down:connect(function()
 				UnnamedCheat_Gui.Enabled = false
 			end)
@@ -395,6 +398,7 @@ function UnnamedCheat_Library:Window()
 			HideMenuButton.Text = "X"
 			HideMenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 			HideMenuButton.TextSize = 12.000
+			HideMenuButton.Visible = false
 			HideMenuButton.MouseButton1Down:connect(function()
 				pcall(callback)
 			end)
