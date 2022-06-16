@@ -1,6 +1,5 @@
 
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/"..getgenv().UnnamedCheat_Loadstring.."/UnnamedCheat/main/List"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/".."mrgunz".."/UnnamedCheat/main/List"))();
 pcall(function()
 	if getgenv().UnnamedCheat_GameName == nil then
 		getgenv().UnnamedCheat_GameName = "GameName"
