@@ -1,6 +1,3 @@
-
-
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/".."mrgunz".."/UnnamedCheat/main/List"))();
 pcall(function()
 	if getgenv().UnnamedCheat_GameName == nil then
@@ -448,6 +445,7 @@ function UnnamedCheat_Library:Window()
 		end
 
 		function Toggle_1(text,callback,unnamedcheat_getgenv,toggled)
+			getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = toggled
 			local NameTabFrame1ToggleButton = Instance.new("TextButton")
 			local NameTabFrame1ToggleLabel = Instance.new("TextLabel")
 			syn.protect_gui(NameTabFrame1ToggleButton)
@@ -488,7 +486,7 @@ function UnnamedCheat_Library:Window()
 					game:GetService("TweenService"):Create(NameTabFrame1ToggleButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
 					game:GetService("TweenService"):Create(NameTabFrame1ToggleLabel,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
 				else
-					NameTabFrame1ToggleLabel.Text = "ON"
+				--	NameTabFrame1ToggleLabel.Text = "ON"
 					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 				end
@@ -498,7 +496,7 @@ function UnnamedCheat_Library:Window()
 					game:GetService("TweenService"):Create(NameTabFrame1ToggleButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(127, 127, 127)}):Play()
 					game:GetService("TweenService"):Create(NameTabFrame1ToggleLabel,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(127, 127, 127)}):Play()
 				else
-					NameTabFrame1ToggleLabel.Text = "ON"
+				--	NameTabFrame1ToggleLabel.Text = "ON"
 					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 				end
@@ -517,7 +515,6 @@ function UnnamedCheat_Library:Window()
 			NameTabFrame1ToggleLabel.TextSize = 14.000
 			NameTabFrame1ToggleLabel.TextWrapped = true
 			NameTabFrame1ToggleLabel.TextXAlignment = Enum.TextXAlignment.Right
-			getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = toggled
 			if toggled == false then
 				getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = false
 				NameTabFrame1ToggleLabel.Text = "OFF"
