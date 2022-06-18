@@ -1,3 +1,6 @@
+
+
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/".."mrgunz".."/UnnamedCheat/main/List"))();
 pcall(function()
 	if getgenv().UnnamedCheat_GameName == nil then
@@ -445,7 +448,6 @@ function UnnamedCheat_Library:Window()
 		end
 
 		function Toggle_1(text,callback,unnamedcheat_getgenv,toggled)
-			local toggled = getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] or false
 			local NameTabFrame1ToggleButton = Instance.new("TextButton")
 			local NameTabFrame1ToggleLabel = Instance.new("TextLabel")
 			syn.protect_gui(NameTabFrame1ToggleButton)
@@ -463,18 +465,22 @@ function UnnamedCheat_Library:Window()
 			NameTabFrame1ToggleButton.TextWrapped = true
 			NameTabFrame1ToggleButton.TextXAlignment = Enum.TextXAlignment.Left
 			NameTabFrame1ToggleButton.MouseButton1Down:connect(function()
-				if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
-					getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
-					NameTabFrame1ToggleLabel.Text = "ON"
-					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-					pcall(callback, getgenv()["UnnamedCheat_"..unnamedcheat_getgenv])
-				else
+				if toggled == false then
 					getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = false
 					NameTabFrame1ToggleLabel.Text = "OFF"
 					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(127, 127, 127)
 					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(127, 127, 127)
-					pcall(callback, getgenv()["UnnamedCheat_"..unnamedcheat_getgenv])
+					pcall(callback)
+				else
+					if toggled == true then
+						getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
+						NameTabFrame1ToggleLabel.Text = "ON"
+						NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+						NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+						pcall(callback)
+					else
+						Status("Not True?",1.8)
+					end
 				end
 			end)
 			NameTabFrame1ToggleButton.MouseEnter:Connect(function()
@@ -497,7 +503,7 @@ function UnnamedCheat_Library:Window()
 					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 				end
 			end)
-
+			
 			NameTabFrame1ToggleLabel.Name = getgenv().UnnamedCheat_RandomText --> Name Tab Frame 1 Toggle Label"
 			NameTabFrame1ToggleLabel.Parent = NameTabFrame1ToggleButton
 			NameTabFrame1ToggleLabel.Active = true
@@ -511,18 +517,23 @@ function UnnamedCheat_Library:Window()
 			NameTabFrame1ToggleLabel.TextSize = 14.000
 			NameTabFrame1ToggleLabel.TextWrapped = true
 			NameTabFrame1ToggleLabel.TextXAlignment = Enum.TextXAlignment.Right
-			if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
-				getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
-				NameTabFrame1ToggleLabel.Text = "ON"
-				NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-				NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-				pcall(callback, getgenv()["UnnamedCheat_"..unnamedcheat_getgenv])
-			else
+			getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = toggled
+			if toggled == false then
 				getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = false
 				NameTabFrame1ToggleLabel.Text = "OFF"
 				NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(127, 127, 127)
 				NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(127, 127, 127)
-				pcall(callback, getgenv()["UnnamedCheat_"..unnamedcheat_getgenv])
+				pcall(callback)
+			else
+				if toggled == true then
+					getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
+					NameTabFrame1ToggleLabel.Text = "ON"
+					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+					pcall(callback)
+				else
+					Status("Not True?",1.8)
+				end
 			end
 		end
 
