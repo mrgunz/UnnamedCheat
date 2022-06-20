@@ -445,7 +445,6 @@ function UnnamedCheat_Library:Window()
 		end
 
 		function Toggle_1(text,callback,unnamedcheat_getgenv,toggled)
-			getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = toggled
 			local NameTabFrame1ToggleButton = Instance.new("TextButton")
 			local NameTabFrame1ToggleLabel = Instance.new("TextLabel")
 			syn.protect_gui(NameTabFrame1ToggleButton)
@@ -463,42 +462,18 @@ function UnnamedCheat_Library:Window()
 			NameTabFrame1ToggleButton.TextWrapped = true
 			NameTabFrame1ToggleButton.TextXAlignment = Enum.TextXAlignment.Left
 			NameTabFrame1ToggleButton.MouseButton1Down:connect(function()
-				if toggled == false then
+				if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
+					getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
+					NameTabFrame1ToggleLabel.Text = "ON"
+					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+					pcall(callback)
+				else
 					getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = false
 					NameTabFrame1ToggleLabel.Text = "OFF"
 					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(127, 127, 127)
 					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(127, 127, 127)
 					pcall(callback)
-				else
-					if toggled == true then
-						getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
-						NameTabFrame1ToggleLabel.Text = "ON"
-						NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-						NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-						pcall(callback)
-					else
-						Status("Not True?",1.8)
-					end
-				end
-			end)
-			NameTabFrame1ToggleButton.MouseEnter:Connect(function()
-				if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
-					game:GetService("TweenService"):Create(NameTabFrame1ToggleButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
-					game:GetService("TweenService"):Create(NameTabFrame1ToggleLabel,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
-				else
-				--	NameTabFrame1ToggleLabel.Text = "ON"
-					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-				end
-			end)
-			NameTabFrame1ToggleButton.MouseLeave:Connect(function()
-				if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
-					game:GetService("TweenService"):Create(NameTabFrame1ToggleButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(127, 127, 127)}):Play()
-					game:GetService("TweenService"):Create(NameTabFrame1ToggleLabel,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(127, 127, 127)}):Play()
-				else
-				--	NameTabFrame1ToggleLabel.Text = "ON"
-					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 				end
 			end)
 			
@@ -515,23 +490,26 @@ function UnnamedCheat_Library:Window()
 			NameTabFrame1ToggleLabel.TextSize = 14.000
 			NameTabFrame1ToggleLabel.TextWrapped = true
 			NameTabFrame1ToggleLabel.TextXAlignment = Enum.TextXAlignment.Right
-			if toggled == false then
-				getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = false
-				NameTabFrame1ToggleLabel.Text = "OFF"
-				NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(127, 127, 127)
-				NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(127, 127, 127)
-				pcall(callback)
-			else
-				if toggled == true then
-					getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] = true
+			NameTabFrame1ToggleButton.MouseEnter:Connect(function()
+				if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
+					game:GetService("TweenService"):Create(NameTabFrame1ToggleButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+					game:GetService("TweenService"):Create(NameTabFrame1ToggleLabel,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+				else
 					NameTabFrame1ToggleLabel.Text = "ON"
 					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-					pcall(callback)
-				else
-					Status("Not True?",1.8)
 				end
-			end
+			end)
+			NameTabFrame1ToggleButton.MouseLeave:Connect(function()
+				if getgenv()["UnnamedCheat_"..unnamedcheat_getgenv] == false then
+					game:GetService("TweenService"):Create(NameTabFrame1ToggleButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(127, 127, 127)}):Play()
+					game:GetService("TweenService"):Create(NameTabFrame1ToggleLabel,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextColor3 = Color3.fromRGB(127, 127, 127)}):Play()
+				else
+					NameTabFrame1ToggleLabel.Text = "ON"
+					NameTabFrame1ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+					NameTabFrame1ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+				end
+			end)
 		end
 
 		function Main_Slider_1(text,max,unnamedcheat_getgenv,callback)
