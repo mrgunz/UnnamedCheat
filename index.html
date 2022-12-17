@@ -3,7 +3,7 @@
         <meta charset = "utf-8">
 		<meta name = "author" content = "Unnamed Cheat" />
 		<meta name = "description" content = "Unnamed Cheat" />
-        <meta name = "keywords" content = "Unnamed Cheat Discord,Unnamed Cheat Discord Server,Unnamed Cheat, Unnamed Cheat Hub, UnnamedCheat, unnamed cheat script, lua, synapse,Synapse X,Roblox,Hub,script,script hub,free script hub,Typical Colors 2 Hack,Typical Colors 2 Cheat,Tc2 hack,TC2 Cheat,Pirates vs. Ninjas hack,Pirates vs. Ninjas Cheat,Bloxstrike cheat,Bloxstrike hacks,KAT Modded cheat,KAT Modded hacks,Kat kill all,kat cheat,kat hacks,Arsenal hack,Arsenal hack 2022,Arsenal cheat,Roblox Hacks,Roblox Cheats," />
+        <meta name = "keywords" content = "Unnamed Cheat Discord,Unnamed Cheat Discord Server,Unnamed Cheat, Unnamed Cheat Hub, UnnamedCheat, unnamed cheat script, lua, synapse,Synapse X,Roblox,Hub,script,script hub,free script hub,Typical Colors 2 Hack,Typical Colors 2 Cheat,Tc2 hack,TC2 Cheat,Pirates vs. Ninjas hack,Pirates vs. Ninjas Cheat,Bloxstrike cheat,Bloxstrike hacks,KAT Modded cheat,KAT Modded hacks,Kat kill all,kat cheat,kat hacks,Arsenal hack,Arsenal hack 2022,Arsenal cheat,Roblox Hacks,Roblox Cheats,Script Ware,script ware v2,script ware v3" />
         <meta property = "og:title" content = "Unnamed Cheat" />
 		<meta property = "og:description" content = "Official Website For Unnamed Cheat" />
 		<meta property = "og:type" content = "website" />
@@ -25,17 +25,6 @@
                 background-color: rgb(80, 80, 80);
             }
 
-            #scriptBtn {
-                color: rgb(78, 153, 204); 
-                background-color: rgb(60, 60, 60);
-                margin-top: 45px;
-                border: 0px;
-                border-radius: 10px;
-                cursor: pointer;
-                width: 650px;
-                height: 35px;
-            }
-
             #copyPopup {
                 color: rgb(255, 255, 255); 
                 background-color: rgb(50, 50, 50); 
@@ -48,7 +37,7 @@
                 height: 35px;
             }
 
-            #gamesBtn {
+            #GameList_Button {
                 background-color: rgb(50, 50, 50); 
                 color: rgb(255, 255, 255); 
                 font-size: large; 
@@ -59,7 +48,18 @@
                 height: 50px;
             }
 
-            #discordBtn {
+            #Script_Button {
+                color: rgb(78, 153, 204); 
+                background-color: rgb(60, 60, 60);
+                margin-top: 45px;
+                border: 0px;
+                border-radius: 10px;
+                cursor: pointer;
+                width: 650px;
+                height: 35px;
+            }
+
+            #JoinDiscord_Button {
                 background-color: rgb(50, 50, 50);  
                 color: rgb(255, 255, 255); 
                 font-size: large; 
@@ -70,7 +70,7 @@
                 height: 50px;
             }
 
-            #copyBtn:hover {
+            #Copy_Button:hover {
                 background-color: rgb(70, 70, 70);
             }
             #detailLine {
@@ -85,23 +85,23 @@
         <input type="text" value="Copied To Clipboard!" readonly id="copyPopup">
         <center>
             <h1 style="font-family: monospace;"></h1>
-            <button id="scriptBtn"><span style="color: rgb(78, 153, 204);">loadstring</span>(game:<span style="color: rgb(78, 153, 204);">HttpGet</span>(<span style="color: rgb(80, 179, 179);">"</span><span style="color: rgb(149, 199, 144);">https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Launcher</span><span style="color: rgb(78, 153, 204);">"</span>))();</button>
+            <button id="Script_Button"><span style="color: rgb(78, 153, 204);">loadstring</span>(game:<span style="color: rgb(78, 153, 204);">HttpGet</span>(<span style="color: rgb(80, 179, 179);">"</span><span style="color: rgb(149, 199, 144);">https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Launcher</span><span style="color: rgb(78, 153, 204);">"</span>))()</button>
             <h1 style="font-family: monospace;"><span style="color: rgb(0, 0, 0);">Unnamed </span>Cheat</span> Supported Exploits</h1>
             <i style="color: rgb(180, 180, 180);"><a href="https://script-ware.com/w" target = "_blank" style="color: rgb(180, 180, 180);">Script Ware</a></i>
             <br>
             <div id="detailLine"></div>
-            <button id="gamesBtn">View Supported Games</button>
+            <button id="GameList_Button">View Supported Games</button>
             <br>
             <div id="detailLine"></div>
-            <button id="discordBtn">Join Discord Server</button>
+            <button id="JoinDiscord_Button">Join Discord Server</button>
         </center>
         <script type="text/javascript">
-            const scriptBtn = document.getElementById("scriptBtn");
+            const Script_Button = document.getElementById("Script_Button");
             const copyPopup = document.getElementById("copyPopup");
-            const gamesBtn = document.getElementById("gamesBtn");
-            const discordBtn = document.getElementById("discordBtn");
+            const GameList_Button = document.getElementById("GameList_Button");
+            const JoinDiscord_Button = document.getElementById("JoinDiscord_Button");
 
-            scriptBtn.addEventListener("click", () => {
+            Script_Button.addEventListener("click", () => {
                 const scriptBox = document.createElement("textarea");
                 scriptBox.value = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Launcher"))()';
                 document.body.appendChild(scriptBox);
@@ -112,12 +112,12 @@
                 setTimeout(() => {copyPopup.style.display = "none";}, 2800);
             });
 
-            gamesBtn.addEventListener("click", () => {
-                window.open("https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/Game_List");
+            JoinDiscord_Button.addEventListener("click", () => {
+                window.open("http://discord.gg/9n868vFG2N");
             });
 
-            discordBtn.addEventListener("click", () => {
-                window.open("http://discord.gg/9n868vFG2N");
+            GameList_Button.addEventListener("click", () => {
+                window.open("https://raw.githubusercontent.com/mrgunz/UnnamedCheat/main/GameList");
             });
         </script>
     </body>
