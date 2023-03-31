@@ -32,7 +32,7 @@
                 height: 0px;
             }
 
-            #copyPopup {
+            #Popup {
                 color: rgb(255, 255, 255); 
                 background-color: rgb(50, 50, 50); 
                 border: 0px;
@@ -83,7 +83,7 @@
         </style>
     </head>
     <body>
-        <input type="text" value="Copied To Clipboard!" readonly id="copyPopup">
+        <input type="text" value="Copied To Clipboard!" readonly id="Popup">
         <center>
             <h1 style="font-family: monospace;"></h1>
             <h1 style="font-family: monospace;"><span style="color: rgb(0, 0, 0);">Unnamed </span>Cheat</span></h1>
@@ -101,7 +101,7 @@
         </center>
         <script type="text/javascript">
             const Script_Button = document.getElementById("Script_Button");
-            const copyPopup = document.getElementById("copyPopup");
+            const Popup = document.getElementById("Popup");
             const GameList_Button = document.getElementById("GameList_Button");
             const JoinDiscord_Button = document.getElementById("JoinDiscord_Button");
 
@@ -112,8 +112,8 @@
                 scriptBox.select();
                 document.execCommand("Copy");
                 document.body.removeChild(scriptBox);
-                copyPopup.style.display = "block";
-                setTimeout(() => {copyPopup.style.display = "none";}, 2800);
+                Popup.style.display = "block";
+                setTimeout(() => {Popup.style.display = "none";}, 2800);
             });
 
             JoinDiscord_Button.addEventListener("click", () => {
